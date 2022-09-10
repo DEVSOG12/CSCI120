@@ -1,8 +1,9 @@
 //
-// Created by Oreofe Solarin on 9/5/22.
+// Created by Oreofe Solarin on 9/9/22.
 //
 
 #include "Rectangle.h"
+
 
 
 
@@ -38,19 +39,19 @@ int Rectangle::getArea() const{
 }
 
 
- std::ostream &operator<<(std::ostream &out, const Rectangle &r) {
-   r.display(out);
-     return out;
+std::ostream &operator<<(std::ostream &out, const Rectangle &r) {
+    r.display(out);
+    return out;
 
 }
 
 std::istream &operator>>(std::istream &in,  Rectangle &r) {
     std::cout << "Input Len: ";
     in >> r.len;
-//    r.setLen(r.len);
+    r.setLen(r.len);
     std::cout << "Input Width: ";
     in >> r.width;
-//    r.setWidth(r.width);
+    r.setWidth(r.width);
     r.display(std::cout);
     return  in;
 }

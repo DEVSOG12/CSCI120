@@ -1,0 +1,6 @@
+# ninja log v5
+6	387	1662734782358863711	CMakeFiles/ch0HouseAggregate.dir/main.cpp.o	53dd65bdd12e7ba6
+387	436	1662734782409239742	ch0HouseAggregate	8e9b994fcca29dec
+7	385	1662734782355766069	CMakeFiles/ch0HouseAggregate.dir/House.cpp.o	8605586660e212f9
+6	161	1662734565753854657	CMakeFiles/ch0HouseAggregate.dir/Triangle.cpp.o	e12976d07226547b
+5	360	1662733880667409123	CMakeFiles/ch0HouseAggregate.dir/Rectangle.cpp.o	5c7a5e8df9b230b2
