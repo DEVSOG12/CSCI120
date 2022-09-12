@@ -1,0 +1,3 @@
+/Users/oreofe/Desktop/CS120/CH0/Text_ADT_Lab/cmake-build-debug/CMakeFiles/Text_ADT_Lab.dir
+/Users/oreofe/Desktop/CS120/CH0/Text_ADT_Lab/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/oreofe/Desktop/CS120/CH0/Text_ADT_Lab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
