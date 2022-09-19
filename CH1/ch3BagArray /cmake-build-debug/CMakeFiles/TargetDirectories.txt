@@ -1,0 +1,3 @@
+/Users/oreofe/Desktop/CS120/CH1/ch3BagArray /cmake-build-debug/CMakeFiles/ch3BagArray_.dir
+/Users/oreofe/Desktop/CS120/CH1/ch3BagArray /cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/oreofe/Desktop/CS120/CH1/ch3BagArray /cmake-build-debug/CMakeFiles/rebuild_cache.dir

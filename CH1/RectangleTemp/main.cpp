@@ -1,7 +1,6 @@
 #include <iostream>
 #include <array>
 #include "Rectangle.hpp"
-
 //template<typename K>
 
 template <typename T>
@@ -31,8 +30,26 @@ int main() {
 //    std::cout << "Max of int array: " << max(array2, sizeArray) << std::endl;
 
     Rectangle<int,int> bath(2,3);
-    std::cout << "Testing out Rectangle with ints: ";
-    std::cout << bath << endl;
+    std::cout << "Testing out Rectangle with ints, ";
+    std::cout << "and display: " << std::endl;
+    bath.display(std::cout);
+
+    std::cout << "Testing out Rectangle with float and int, ";
+    std::cout << "and getArea(): " << std::endl;
+    Rectangle<float,int> room(2.5,3);
+    std::cout << room.getArea() << std::endl;
+//room
+    std::cout << "Testing out crazzy Rectangle with strings, ";
+    std::cout << "and overloaded operator<<: " << std::endl;
+    Rectangle<std::string,std::string> crazzyRoom("amc","pppp");
+//    crazzyRoom.getArea();
+//crazzyRoom.display(std::cout);
+    std::cout << crazzyRoom;
+//
+//    std::cin >> crazzyRoom;
+//
+//    crazzyRoom.display(std::cout);
+
 
     return 0;
 }

@@ -38,9 +38,9 @@ public:
     Text toLower( ) const;                           // Create lower-case copy
 
     // Relational operations (Programming Exercise 3)
-    bool operator == ( const Text& other ) const;
-    bool operator <  ( const Text& other ) const;
-    bool operator >  ( const Text& other ) const;
+    bool operator == ( const Text& other ) const; // Bool Comparison Operator `==`
+    bool operator <  ( const Text& other ) const; // Bool Relational Operator `<`
+    bool operator >  ( const Text& other ) const; // Bool Relational Operator `>`
 
 private:
     // Data members
@@ -50,8 +50,8 @@ private:
     // Friends
 
     // Text input/output operations
-    friend istream & operator >> ( istream& input, Text& inputText );
-    friend ostream & operator << ( ostream& output, const Text& outputText );
+    friend istream & operator >> ( istream& input, Text& inputText ); // istream to input
+    friend ostream & operator << ( ostream& output, const Text& outputText ); // ostream to output
 
 };
 

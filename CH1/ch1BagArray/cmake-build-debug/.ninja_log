@@ -1,0 +1,4 @@
+# ninja log v5
+1	62	1663596832366845363	build.ninja	d4d859861b1b6b16
+0	484	1663338625375985515	CMakeFiles/ch1BagArray.dir/main.cpp.o	f2ca8ed604ea41fd
+485	547	1663338625443377000	libch1BagArray.a	3cabfc574685cce7

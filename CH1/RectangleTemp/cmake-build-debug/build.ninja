@@ -52,12 +52,6 @@ build CMakeFiles/RectangleTemp.dir/main.cpp.o: CXX_COMPILER__RectangleTemp_Debug
   OBJECT_DIR = CMakeFiles/RectangleTemp.dir
   OBJECT_FILE_DIR = CMakeFiles/RectangleTemp.dir
 
-build CMakeFiles/RectangleTemp.dir/Rectangle.cpp.o: CXX_COMPILER__RectangleTemp_Debug /Users/oreofe/Desktop/CS120/CH1/RectangleTemp/Rectangle.cpp || cmake_object_order_depends_target_RectangleTemp
-  DEP_FILE = CMakeFiles/RectangleTemp.dir/Rectangle.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Users/oreofe/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/RectangleTemp.dir
-  OBJECT_FILE_DIR = CMakeFiles/RectangleTemp.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RectangleTemp
@@ -66,7 +60,7 @@ build CMakeFiles/RectangleTemp.dir/Rectangle.cpp.o: CXX_COMPILER__RectangleTemp_
 #############################################
 # Link the executable RectangleTemp
 
-build RectangleTemp: CXX_EXECUTABLE_LINKER__RectangleTemp_Debug CMakeFiles/RectangleTemp.dir/main.cpp.o CMakeFiles/RectangleTemp.dir/Rectangle.cpp.o
+build RectangleTemp: CXX_EXECUTABLE_LINKER__RectangleTemp_Debug CMakeFiles/RectangleTemp.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Users/oreofe/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
   OBJECT_DIR = CMakeFiles/RectangleTemp.dir
   POST_BUILD = :
