@@ -11,52 +11,39 @@
 
 #include <stdexcept>
 #include <iostream>
-
 using namespace std;
 
 class Text
 {
 public:
+// Constructors and operator=
+    Text ( const char *charSeq = "" ); // Initialize using char*
+    Text ( const Text &other ); // Copy constructor
+    void operator = ( const Text &other ); // Assignment
 
-    // Constructors and operator=
-    Text ( const char *charSeq = "" );               // Initialize using char*
-    Text ( const Text &other );                      // Copy constructor
-    void operator = ( const Text &other );           // Assignment
-
-    // Destructor
+// Destructor
     ~Text ();
 
-    // Text operations
-    int getLength () const;                          // # characters
-    char operator [] ( int n ) const;                // Subscript
-    void clear ();                                   // Clear string
+// Text operations
+    int getLength () const; // # characters
+    char operator [] ( int n ) const; // Subscript
+    void clear (); // Clear string
 
-    // Output the string structure -- used in testing/debugging
+// Output the string structure -- used in testing/debugging
     void showStructure () const;
 
-    //--------------------------------------------------------------------
-    // In-lab operations
-    // toUpper/toLower operations (Programming Exercise 2)
-    //Text toUpper( ) const;                           // Create upper-case copy
-    //Text toLower( ) const;                           // Create lower-case copy
-
-    // Relational operations (Programming Exercise 3)
-    //bool operator == ( const Text& other ) const;
-    //bool operator <  ( const Text& other ) const;
-    //bool operator >  ( const Text& other ) const;
-
+//--------------------------------------------------------------------
+// In-lab operations
 private:
+// Data members
+    int bufferSize; // Size of the string buffer
+    char *buffer; // Text buffer containing a null-terminated sequence of characters
 
-    // Data members
-    int bufferSize;   // Size of the string buffer
-    char *buffer;     // Text buffer containing a null-terminated sequence of characters
+// Friends
 
-    // Friends
-
-    // Text input/output operations (In-lab Exercise 1)
+// Text input/output operations (In-lab Exercise 1)
     friend istream & operator >> ( istream& input, Text& inputText );
     friend ostream & operator << ( ostream& output, const Text& outputText );
-
 };
 
 #endif

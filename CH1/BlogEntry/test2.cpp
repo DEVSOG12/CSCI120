@@ -99,6 +99,7 @@ void inactive_test(char selection) {
  * relational operators.  Yeah!
  */
 void test_date_compare(bool (Date::*fcn)(const Date& rhs) const) {
+    cout << endl;
     Date present,
             past(31, 12, 2000),
             future(29, 2, 2096);
@@ -132,13 +133,16 @@ int main(int argc, char **argv) {
 
     int selection;
     cin >> selection;
-    cout << endl;
+
 
     Date present,
             past(31, 12, 2000),
             future(29, 2, 2096);
+
     BlogEntry empty,
             full("Tester", "This is a small test.");
+
+
     int day, month, year,
             day2, month2, year2;
 
@@ -159,6 +163,7 @@ int main(int argc, char **argv) {
 
         case 2:			// Date getters
 #if LAB2_TEST2
+cout  << endl;
             cout << "Testing getters for 12/31/2000: "
 	     << " Month = " << past.getMonth() << ", "
 	     << " Day = " << past.getDay() << ", "
@@ -171,6 +176,8 @@ int main(int argc, char **argv) {
 
         case 3:			// isLeapYear
 #if LAB2_TEST3
+            cout  << endl;
+
             // Is not a leap year -- std multiple of 4 rule
         if(Date::isLeapYear(2001)) {
 	    cout << "** Incorrectly says 2001 is a leap year." << endl;
@@ -203,6 +210,8 @@ int main(int argc, char **argv) {
 
         case 4:			// daysInMonth
 #if LAB2_TEST4
+            cout  << endl;
+
             cout << "Testing < operator" << endl;
 	cout << "April 2000 has " << Date::daysInMonth(4, 2000) << " days (30)." << endl;
 	cout << "February 2001 has " << Date::daysInMonth(2, 2001) << " days (28)." << endl;
@@ -231,6 +240,7 @@ int main(int argc, char **argv) {
 	empty.showStructure();
 	cout << endl;
 	cout << "Test blog entry:" << endl;
+//    full.
 	full.showStructure();
 	cout << endl;
 #else

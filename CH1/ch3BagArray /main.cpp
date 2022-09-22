@@ -44,12 +44,25 @@ void bagTester(Bag<std::string>& bag)
 
 int main()
 {
-    Bag<std::string> bag;
-    std::cout << "Testing the Array-Based Bag:" << std::endl;
-    std::cout << "The initial bag is empty." << std::endl;
-    bagTester(bag);
-    std::cout << "All done!" << std::endl;
+//    Bag<std::string> bag;
+//    std::cout << "Testing the Array-Based Bag:" << std::endl;
+//    std::cout << "The initial bag is empty." << std::endl;
+//    bagTester(bag);
+//    std::cout << "All done!" << std::endl;
 
+Bag<int> grades;
+
+    grades.add(12);
+    grades.add(12);
+    grades.add(12);
+    grades.add(12);
+
+    grades.remove(12);
+    grades.remove(12);
+    grades.remove(12);
+    grades.remove(12);
+    grades.remove(12);
+    //    std::cout << grades;
     return 0;
 } // end main
 

@@ -70,26 +70,62 @@
 // No more cards in the bag. Game over!
 // */
 
+void displayBag(Bag<std::string>& bag)
+{
+    std::cout << "The bag contains " << bag.getCurrentSize()
+              << " items:" << std::endl;
+    std::vector<std::string> bagItems = bag.toVector();
+    int numberOfEntries = (int)bagItems.size();
+    for (int i = 0; i < numberOfEntries; i++)
+    {
+        std::cout << bagItems[i] << " ";
+    }  // end for
+    std::cout << std::endl << std::endl;
+}  // end displayBag
 
 
-int main (){
-    Bag<std::string> walmartBag;
-    walmartBag.add("milk");
-    walmartBag.add("chocolate");
-    walmartBag.add("coffee");
+int sumOfBag(Bag<int>& aBag) {
+    vector<int> me = aBag.toVector();
+    int sum = 0;
+    for(int i : me){
+        sum = sum + i;
+    }
 
-    vector<std::string> myBag = walmartBag.toVector();
-//    myBag.push_back("mmma");
-//    std::cout  << myBag.;
-
-// students add code here to display the content of the vector myBag
-// Hint: students should be using a for loop similar to the one used above in part // 1) for displaying a vector
-
-
-std::cout << "myBag contains: ";
-for(int i = 0; i < myBag.size(); ++i){
-    std::cout << myBag[i] << "     ";
+    return sum;
 }
+
+bool replace(Bag<string>& aBag, string itemToReplace, string replacement ) {
+    if(aBag.contains(itemToReplace)) {
+        aBag.remove(itemToReplace);
+        aBag.add(replacement);
+        return true;
+    } else{
+        return false;
+    }
+
+}
+
+
+int main(){
+
+    Bag<int> grades;
+    grades.add(22);
+    grades.add(44);
+    grades.add(66);
+    grades.add(88);
+    cout << "Sum of grades is: " << sumOfBag(grades) << endl << endl;;
+
+
+    Bag<string> aldi;
+    aldi.add("milk");
+    aldi.add("juice");
+    aldi.add("eggs");
+    cout << "Content of my original aldi bag: " << endl;
+    displayBag(aldi);
+
+    bool success = replace(aldi, "juice", "plums");
+    cout << "Content of my aldi bag after replacing juice is: " << endl;
+    displayBag(aldi);
 
     return 0;
 }

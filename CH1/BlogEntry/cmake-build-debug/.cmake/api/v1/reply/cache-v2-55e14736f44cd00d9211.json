@@ -2,6 +2,42 @@
 	"entries" : 
 	[
 		{
+			"name" : "BlogEntry_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/oreofe/Desktop/CS120/CH1/BlogEntry/cmake-build-debug"
+		},
+		{
+			"name" : "BlogEntry_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "BlogEntry_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/oreofe/Desktop/CS120/CH1/BlogEntry"
+		},
+		{
 			"name" : "CMAKE_ADDR2LINE",
 			"properties" : 
 			[
@@ -55,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/oreofe/Desktop/CS120/CH1/ch1Bag/cmake-build-debug"
+			"value" : "/Users/oreofe/Desktop/CS120/CH1/BlogEntry/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -515,7 +551,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/oreofe/Desktop/CS120/CH1/ch1Bag"
+			"value" : "/Users/oreofe/Desktop/CS120/CH1/BlogEntry"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -795,7 +831,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "ch1Bag"
+			"value" : "BlogEntry"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1076,42 +1112,6 @@
 			],
 			"type" : "BOOL",
 			"value" : "FALSE"
-		},
-		{
-			"name" : "ch1Bag_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/oreofe/Desktop/CS120/CH1/ch1Bag/cmake-build-debug"
-		},
-		{
-			"name" : "ch1Bag_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "ch1Bag_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/oreofe/Desktop/CS120/CH1/ch1Bag"
 		}
 	],
 	"kind" : "cache",

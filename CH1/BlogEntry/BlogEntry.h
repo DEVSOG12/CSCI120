@@ -23,7 +23,7 @@ public:
     void showStructure() const;
 
     // Programming Exercise 1
-    //void printHTML( ostream& out ) const;
+    void printHTML( ostream& out ) const;
 
 private:
     Text author;

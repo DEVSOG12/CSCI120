@@ -38,7 +38,7 @@ public:
     bool contains(const T& anEntry) const;
     int getFrequencyOf(const T& anEntry) const;
     std::vector<T> toVector() const;
-    //void display(ostream &out) const;
+//    void display(ostream &out) const;
 };  // end Bag
 
 
@@ -120,6 +120,10 @@ bool Bag<T>::contains(const T& anEntry) const
 {
     return getIndexOf(anEntry) > -1;
 }  // end contains
+
+
+
+
 
 /* ALTERNATE 1
  template<class T>
