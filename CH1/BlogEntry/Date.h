@@ -31,6 +31,7 @@ public:
 
     friend ostream& operator<<(ostream& out, const Date& date);
 
+
 private:
     int day;
     int month;

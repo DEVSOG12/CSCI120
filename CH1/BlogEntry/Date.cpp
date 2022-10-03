@@ -8,6 +8,9 @@
 time_t t = time(NULL);
 tm* timePtr = localtime(&t);
 
+
+// initializer if no parameter is given
+// Post: TBH just a constructor
 Date::Date() {
 
     day =  timePtr->tm_mday;
@@ -15,7 +18,8 @@ Date::Date() {
     year = (timePtr->tm_year + 1900);
 
 }
-
+// Pre: Req. Passed Values [int] kday, kmonth, kyear : (Reason for k to dist. with the private var.
+// Post: TBH just a constructor
 Date::Date(int kday, int kmonth, int kyear) throw(class std::logic_error) {
 
     if (kday > 31 || kmonth > 12 || kmonth < 1 || kday < 1 || kyear < 1902){
@@ -27,24 +31,39 @@ Date::Date(int kday, int kmonth, int kyear) throw(class std::logic_error) {
     year = kyear;
 }
 
+// getter of int day
+// Pre: Nothing tbh
+// Post: Return the private value day. [int]
 int Date::getDay() const {
     return day;
 }
 
+// getter of int month
+// Pre: Nothing tbh
+// Post: Return the private value month. [int]
 int Date::getMonth() const {
     return month;
 }
 
+// getter of int year
+// Pre: Nothing tbh
+// Post: Return the private value year. [int]
 int Date::getYear() const {
     return year;
 }
 
+// Print cout the Structure of the Type of Date,
+// Pre: Nothing tbh
+// Post: std::cout each value: [int] Day, Month, Year
 void Date::showStructure() const {
     std::cout << std::endl << "Day: " << day << std::endl;
     std::cout << "Month: " << month << std::endl;
     std::cout << "Year: " << year << std::endl;
 }
 
+// Checking if a given year is a Leap Year
+// Pre: Req. Parameter Year as [int]
+// Post: Return boolean if the given parameter [int] is a leap year
 bool Date::isLeapYear(int year) {
     if( year %  400 == 0 && year % 100 == 0)
     {
@@ -55,16 +74,10 @@ bool Date::isLeapYear(int year) {
         return false;
 }
 
+// Returns number of days in a given month based on the month and year
+// Pre: Req. Parameter month and year as [int]
+// Post: Return int value representing the number of days in the giving month
 int Date::daysInMonth(int month, int year) {
-//    if month in {1, 3, 5, 7, 8, 10, 12}:
-//    return 31
-//    if month == 2:
-//    if leap_year(year):
-//    return 29
-//    return 28
-//    return 30
-
-
     if((month % 2 == 1 && month < 8) || (month > 8 && month % 2 == 0)) {
         return 31;
     }else if(month == 2){
@@ -78,11 +91,10 @@ int Date::daysInMonth(int month, int year) {
     return 30;
 }
 
-// std::ostream & operator<<(std::ostream & stream,  const Date& date) {
-//    std::cout << date.showStructure();
-//    return stream;
-//}
 
+// Overload operator .. .
+// Pre: Req. Parameter std::ostream and Type Date
+// Post: Returns std::ostream...
 std::ostream& operator<<(std::ostream &out, const Date& date){
     std::cout << std::endl << "Day: " << date.day << std::endl;
     std::cout << "Month: " << date.month << std::endl;
