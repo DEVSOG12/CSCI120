@@ -31,7 +31,7 @@ public:
     bool contains(const ItemType& anEntry) const;
     int getFrequencyOf(const ItemType& anEntry) const;
     std::vector<ItemType> toVector() const;
-    //bool addAtEnd(const ItemType& newEntry);
+    bool addAtEnd(const ItemType& newEntry);
 
 }; // end LinkedBag
 
@@ -104,13 +104,14 @@ bool LinkedBag<ItemType>::add(const ItemType& newEntry)
     // Add to beginning of chain: new node references rest of chain;
     // (headPtr is null if chain is empty)
     Node<ItemType>* nextNodePtr = new Node<ItemType>();
+
     nextNodePtr->setItem(newEntry);
     nextNodePtr->setNext(headPtr);  // New node points to chain
 //   Node<ItemType>* nextNodePtr = new Node<ItemType>(newEntry, headPtr); // alternate code
 
     headPtr = nextNodePtr;          // New node is now first node
     itemCount++;
-
+//std::cout << nextNodePtr->setNext() << std::endl;
     return true;
 }  // end add
 
@@ -249,7 +250,14 @@ Node<ItemType>* LinkedBag<ItemType>::getPointerTo(const ItemType& anEntry) const
     } // end while
 
     return curPtr;
-} // end getPointerTo
+}
+
+template<class ItemType>
+bool LinkedBag<ItemType>::addAtEnd(const ItemType &newEntry) {
+
+    return false;
+}
+// end getPointerTo
 
 
 #endif //CH4LINKEDBAG_LINKEDBAG_HPP

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "LinkedBag.hpp"
-using namespace std;
+//using namespace std;
 
 
 void displayBag(LinkedBag<std::string>& bag)
@@ -19,20 +19,13 @@ void displayBag(LinkedBag<std::string>& bag)
 }  // end display
 
 int main() {
-    //cout << "Testing LinkedBag" << endl;
+    LinkedBag<int> b1, b2;
+    LinkedBag<int> b3 = b1;
 
-    LinkedBag<string> aldi;
 
-    aldi.add("milk");
-    aldi.add("bread");
-    aldi.add("juice");
 
-    //displayBag(aldi);
 
-    LinkedBag<string> walmart(aldi);
-    walmart.remove("milk");
-    displayBag(aldi);
-    displayBag(walmart);
+
 
     return 0;
 }
