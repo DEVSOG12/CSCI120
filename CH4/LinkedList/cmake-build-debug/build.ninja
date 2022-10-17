@@ -46,8 +46,8 @@ cmake_ninja_workdir = /Users/oreofe/Desktop/CS120/CH4/LinkedList/cmake-build-deb
 
 build cmake_object_order_depends_target_LinkedList: phony || CMakeFiles/LinkedList.dir
 
-build CMakeFiles/LinkedList.dir/test5.cpp.o: CXX_COMPILER__LinkedList_Debug /Users/oreofe/Desktop/CS120/CH4/LinkedList/test5.cpp || cmake_object_order_depends_target_LinkedList
-  DEP_FILE = CMakeFiles/LinkedList.dir/test5.cpp.o.d
+build CMakeFiles/LinkedList.dir/slideshow.cpp.o: CXX_COMPILER__LinkedList_Debug /Users/oreofe/Desktop/CS120/CH4/LinkedList/slideshow.cpp || cmake_object_order_depends_target_LinkedList
+  DEP_FILE = CMakeFiles/LinkedList.dir/slideshow.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/LinkedList.dir
   OBJECT_FILE_DIR = CMakeFiles/LinkedList.dir
@@ -60,7 +60,7 @@ build CMakeFiles/LinkedList.dir/test5.cpp.o: CXX_COMPILER__LinkedList_Debug /Use
 #############################################
 # Link the executable LinkedList
 
-build LinkedList: CXX_EXECUTABLE_LINKER__LinkedList_Debug CMakeFiles/LinkedList.dir/test5.cpp.o
+build LinkedList: CXX_EXECUTABLE_LINKER__LinkedList_Debug CMakeFiles/LinkedList.dir/slideshow.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/LinkedList.dir
   POST_BUILD = :
