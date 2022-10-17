@@ -13,6 +13,8 @@
 #include <fstream>
 #include <ctime>
 using namespace std;
+#include <sstream>
+#include <string>
 
 #include "ListLinked.hpp"
 
@@ -42,13 +44,14 @@ class Slide
 		void display () const;			// Display slide and pause
 		
 	private:
-		
+
 		char image [HEIGHT][WIDTH];  	   // Slide image
 		int pause;				   // Seconds to pause after
 		//  displaying slide
-		
-		friend istream& operator>> (istream& in, Slide& slide);
-		
+
+    friend istream& operator>> (istream& in, Slide& slide);
+    friend ostream& operator<< (ostream & in, const Slide& slide);
+
 	};
 
 //--------------------------------------------------------------------
@@ -63,31 +66,32 @@ int main ()
 	
     cout << endl << "Enter the name of the slide show file : ";
     cin >> filename;
-	
-    ifstream slideFile ( filename );
+
+    std::fstream slideFile ( filename );
 	
     if ( !slideFile )
     {
 		cout << "Error opening file " << filename << endl;
     }
     else
-    {
-		// Read in the slides one-by-one.
-		while ( slideFile >> currSlide )
-		{
-			// currSlide is the most recently read Slide
-			/**** YOUR CODE HERE ****/
+    {   int i = 0;
+        while ( slideFile >> currSlide )
+        {
+            slideShow.insert ( currSlide );
+            i++;
 
-			/****                ****/
-		}
-		
+        }
 		// Close the file.
 		slideFile.close();
 		
 		// Display the slide show slide-by-slide.
-		/**** YOUR CODE HERE ****/
+        slideShow.gotoBeginning();
+        while (i != 0){
+            slideShow.getCursor().display();
+            slideShow.gotoNext();
+            i--;
+        }
 
-		/****                ****/		
     }
 	
     return 0;
@@ -99,15 +103,39 @@ int main ()
 istream& operator>> (istream& inFile, Slide& slide)
 // Read a slide from inFile.
 {
-    char skipCR;   // Used to skip newline marker
-	
-    inFile >> slide.pause;
-    inFile.get(skipCR);
-    for ( int j = 0 ; j < Slide::HEIGHT ; j++ )
-    {
-        inFile.getline(slide.image[j],Slide::WIDTH,'\n');
+    string line;
+    int i = 0;
+    while (inFile.peek() != EOF && getline(inFile, line) && i <= Slide::HEIGHT){
+        std::cout << "Line " << line << std::endl;
+
+
+//        if (line.length() > Slide::WIDTH){
+//            line = line.substr(0, Slide::WIDTH);
+//        }
+//        for (int j = 0; j < line.length(); j++){
+//            slide.image[i][j] = line[j];
+//        }
+//        i++;
+//    }
+
+        if (line == "----")
+        {
+            break;
+        }
+        else
+        {
+//            line.erase(std::find(line.begin(), line.end(), '\0'), line.end());
+//          if(line.length() != 0){
+                strcpy(slide.image[i], line.c_str());
+                i++;
+
+//            }
+        }
+        line = "";
+
     }
-	return inFile; 
+    inFile >> slide.pause;
+    return inFile;
 }
 
 
@@ -115,9 +143,12 @@ istream& operator>> (istream& inFile, Slide& slide)
 
 ostream& operator<< (ostream& out, const Slide& slide)
 {
-	/**** YOUR CODE HERE ****/
-
-	return out;
+    out << slide.pause << endl;
+    for (const auto & j : slide.image)
+    {
+        out << j << endl;
+    }
+    return out;
 }
 
 //--------------------------------------------------------------------
@@ -127,5 +158,19 @@ void Slide:: display () const
 
 {
 	
-    /**** YOUR CODE HERE ****/	
+    int i, j;
+
+    for (i = 0; i < HEIGHT; i++)
+    {
+        for (j = 0; j < WIDTH; j++)
+
+            if(image[i][j] == '\0')
+                cout << " ";
+            else
+                cout << image[i][j];
+        cout << endl;
+    }
+//    cout << "NEXT*****      "<<endl;
+
+    wait ( pause );
 }

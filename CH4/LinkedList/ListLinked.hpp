@@ -111,6 +111,35 @@ List<DataType>::List(const List& other)
 // to the "other" list.
 
 {
+       if (other.head == 0) {
+        return;
+        }
+
+        // Copy the first node
+        head = new ListNode(other.head->dataItem, 0);
+        ListNode* temp = head;
+
+        // Copy the rest of the list
+        for (ListNode* otherTemp = other.head->next; otherTemp != 0;
+        otherTemp = otherTemp->next) {
+        temp->next = new ListNode(otherTemp->dataItem, 0);
+        temp = temp->next;
+        }
+
+        // Copy the cursor position
+        if (other.cursor == 0) {
+        cursor = 0;
+        } else {
+        int count = 0;
+        for (temp = head; temp != other.cursor; temp = temp->next) {
+            count++;
+        }
+        cursor = head;
+        for (int i = 0; i < count; i++) {
+            cursor = cursor->next;
+        }
+        }
+
    
 }
 
@@ -149,9 +178,19 @@ void List<DataType>::insert(const DataType& newDataItem) throw (logic_error)
 // Inserts newDataItem after the cursor. If the list is empty, then
 // newDataItem is inserted as the first (and only) item in the list.
 // In either case, moves the cursor to newDataItem.
-
+if(isEmpty())
+{
+    head = new ListNode(newDataItem, 0);
+    cursor = head;
+}
+else
+{
+    cursor->next = new ListNode(newDataItem, cursor->next);
+    cursor = cursor->next;
+}
 
 }
+
 
 //--------------------------------------------------------------------
 
@@ -163,6 +202,35 @@ void List<DataType>::remove() throw (logic_error)
 // item "follows" the last list item.
 
 {
+    if(isEmpty())
+        {
+            throw logic_error("List is empty");
+        }
+        else
+        {
+            ListNode* temp = cursor;
+            if(cursor == head)
+            {
+                std::cout  << "Cursor is at head " << temp->dataItem << std::endl;
+                head = head->next;
+                cursor = head;
+            }
+            else
+            {
+                std::cout << "Cursor is not at head " << temp->dataItem << std::endl;
+                ListNode* temp2 = head;
+                std::cout  << "Temp2 is " << temp2->dataItem << std::endl;
+                while(temp2->next != cursor)
+                {
+                    temp2 = temp2->next;
+                }
+                temp2->next = cursor->next;
+                cursor = cursor->next;
+                gotoPrior();
+            }
+            delete temp;
+        }
+
    
 }
 
@@ -175,6 +243,14 @@ void List<DataType>::replace(const DataType& newDataItem) throw (logic_error)
 // leaves the cursor at newDataItem.
 
 {
+    if(isEmpty())
+    {
+        throw logic_error("List is empty");
+    }
+    else
+    {
+        cursor->dataItem = newDataItem;
+    }
    
 }
 
@@ -186,6 +262,10 @@ void List<DataType>::clear()
 // Removes all the items from a list. Sets head and cursor to 0.
 
 {
+    while(!isEmpty())
+    {
+        remove();
+    }
    
 }
 
@@ -197,7 +277,7 @@ bool List<DataType>::isEmpty() const
 // Returns true if a list is empty. Otherwise, returns false.
 
 {
-    return true;
+    return head == 0;
 }
 
 //--------------------------------------------------------------------
@@ -215,19 +295,18 @@ bool List<DataType>::isFull() const
 // implementation of the list. 
 
 {
-    return false;		// See note above and alternative below.
-
-    /*
-    // One alternative implementation: Not really recommended, but
-    // might have some pedagogic value.
-    // Below is a somewhat hacked way to test if the list is full.
-    // If a node can be successfully allocated than the list is not
-    // full.  If the allocation fails it is implied that there is no
-    // more free memory therefore the list is full.
-    
+//
+//    /*
+//    // One alternative implementation: Not really recommended, but
+//    // might have some pedagogic value.
+//    // Below is a somewhat hacked way to test if the list is full.
+//    // If a node can be successfully allocated than the list is not
+//    // full.  If the allocation fails it is implied that there is no
+//    // more free memory therefore the list is full.
+//
     DataType testDataItem;
     ListNode *p;
-    
+
     try
     {
         p = new ListNode(testDataItem, 0);
@@ -240,8 +319,10 @@ bool List<DataType>::isFull() const
     delete p;
     return false;
 
-    // End of alternative implementation.
-    */
+//    // End of alternative implementation.
+//    */
+
+
 }
 
 //--------------------------------------------------------------------
@@ -253,6 +334,14 @@ void List<DataType>::gotoBeginning() throw (logic_error)
 // the list. If list is empty, throws logic error.
 
 {
+    if(isEmpty())
+    {
+        throw logic_error("List is empty");
+    }
+    else
+    {
+        cursor = head;
+    }
    
 }
 
@@ -265,6 +354,17 @@ void List<DataType>::gotoEnd() throw (logic_error)
 // list. Otherwise, throws logic_error.
 
 {
+    if(isEmpty())
+    {
+        throw logic_error("List is empty");
+    }
+    else
+    {
+        while(cursor->next != 0)
+        {
+            cursor = cursor->next;
+        }
+    }
    
 }
 
@@ -278,7 +378,22 @@ bool List<DataType>::gotoNext() throw (logic_error)
 // leaves cursor unmoved and returns false.
 
 {
-    return true;
+    if(isEmpty())
+    {
+        throw logic_error("List is empty");
+    }
+    else
+    {
+        if(cursor->next != 0)
+        {
+            cursor = cursor->next;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 //--------------------------------------------------------------------
@@ -291,7 +406,27 @@ bool List<DataType>::gotoPrior() throw (logic_error)
 // Otherwise, returns false.
 
 {
-    return true;
+    if(isEmpty())
+    {
+        throw logic_error("List is empty");
+    }
+    else
+    {
+        if(cursor != head)
+        {
+            ListNode* temp = head;
+            while(temp->next != cursor)
+            {
+                temp = temp->next;
+            }
+            cursor = temp;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 //--------------------------------------------------------------------
