@@ -65,6 +65,8 @@ void Node<ItemType>::setNext( Node<ItemType>* nextNodePtr)
 template<class ItemType>
 ItemType Node<ItemType>::getItem() const
 {
+//    if(item != NULL)
+
    return item;
 } // end getItem
 

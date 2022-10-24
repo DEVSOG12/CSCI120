@@ -3,4 +3,4 @@ project(LinkedListClass)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(LinkedListClass main.cpp)
+add_executable(LinkedListClass main.cpp lol.cpp)

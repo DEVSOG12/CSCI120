@@ -26,10 +26,9 @@ int main(){
     cout << "List grades: ";
     displayList(&grades);
 
-
     // test assignment op
     cout << "*** Testing assignment operator (grades is copied over prices, ***"<< endl;
-    cout << "*** then we remove last element from prices and this does NOT affect grades.) ***" << endl;
+    cout << "*** then we remove last element from prices and this does NOT affect grades.) ***" <<     endl;
     LinkedList<int> prices;
     prices = grades;
     cout << "List prices: ";
@@ -44,7 +43,7 @@ int main(){
     cout << "List temperatures: ";
     displayList(&temperatures);
 
-//*/
+
     return 0;
 }
 

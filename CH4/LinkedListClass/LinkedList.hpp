@@ -14,6 +14,7 @@
 
 #include <cassert>
 #include <iostream>
+#include <vector>
 
 
 template<class ItemType>
@@ -23,6 +24,7 @@ private:
     Node<ItemType>* headPtr; // Pointer to first node in the chain;
     // (contains the first entry in the list)
     int itemCount;           // Current count of list items
+
 
     // Locates a specified node in this linked list.
     // @pre  position is the number of the desired node;
@@ -39,7 +41,7 @@ public:
     // Placed here for easy access in Interlude
     // See top of LinkedList.cpp
     bool operator==(const LinkedList<ItemType>& rightHandSide) const;
-    //LinkedList<ItemType>& operator=(const LinkedList<ItemType>& rightHandSide);
+    LinkedList<ItemType>& operator=(const LinkedList<ItemType>& rightHandSide);
     LinkedList<ItemType> operator+(const LinkedList<ItemType>& rightHandSide) const;
     template<class friendItemType>
     friend std::ostream& operator<<(std::ostream& outStream, const LinkedList<friendItemType>& outputList);
@@ -48,7 +50,7 @@ public:
 
     // LinkedList methods from interface
     LinkedList();
-    //LinkedList(const LinkedList<ItemType>& aList);
+    LinkedList(const LinkedList<ItemType>& aList);
     virtual ~LinkedList();
 
     bool isEmpty() const;
@@ -125,7 +127,7 @@ std::ostream& operator<<(std::ostream& outStream, const LinkedList<friendItemTyp
    auto currPtr = outputList.headPtr;
    while (currPtr != nullptr)
    {
-      outStream << position << "\t" << currPtr->getItem() << std::endl;
+       outStream << position << "\t" << currPtr->getItem() << std::endl;
       currPtr = currPtr->getNext();
       position++;
    }
@@ -182,13 +184,15 @@ auto LinkedList<ItemType>::copyListNodes(Node<ItemType>* origChainPtr) const
 template<class ItemType>
 LinkedList<ItemType>::LinkedList() : headPtr(nullptr), itemCount(0)
 {
+
+
 }  // end default constructor
 
 
 template<class ItemType>
 LinkedList<ItemType>::~LinkedList()
 {
-   clear();
+    clear();
 }  // end destructor
 
 template<class ItemType>
@@ -207,7 +211,7 @@ template<class ItemType>
 bool LinkedList<ItemType>::insert(int newPosition, const ItemType& newEntry)
 {
    bool ableToInsert = (newPosition >= 1) && (newPosition <= itemCount + 1);
-   if (ableToInsert)
+   if (ableToInsert) // Copilot is
    {
       // Create a new node containing the new entry 
       auto newNodePtr = new Node<ItemType>(newEntry);
@@ -263,8 +267,9 @@ bool LinkedList<ItemType>::remove(int position)
       
       // Return node to system
       curPtr->setNext(nullptr);
-      
-      itemCount--;  // Decrease count of entries
+      delete curPtr;
+
+       itemCount--;  // Decrease count of entries
    }  // end if
    
    return ableToRemove;
@@ -273,8 +278,9 @@ bool LinkedList<ItemType>::remove(int position)
 template<class ItemType>
 void LinkedList<ItemType>::clear()
 {
-   while (!isEmpty())
-      remove(1);
+    while (!isEmpty())
+        remove(1);
+
 }  // end clear
 
 template<class ItemType>
@@ -324,7 +330,29 @@ auto LinkedList<ItemType>::getNodeAt(int position) const
       curPtr = curPtr->getNext();
       
    return curPtr;
-}  // end getNodeAt
+}
+
+
+// @pre None.
+
+template<class ItemType>
+LinkedList<ItemType> &LinkedList<ItemType>::operator=(const LinkedList<ItemType> &rightHandSide) {
+    if (this != &rightHandSide) {
+            clear();
+            itemCount = rightHandSide.itemCount;
+            headPtr = copyListNodes(rightHandSide.headPtr);
+        }
+        return *this;
+}
+
+
+template<class ItemType>
+LinkedList<ItemType>::LinkedList(const LinkedList<ItemType> &aList) {
+    headPtr = copyListNodes(aList.headPtr);
+    itemCount = aList.itemCount;
+
+}
+// end getNodeAt
 
 
 #endif
