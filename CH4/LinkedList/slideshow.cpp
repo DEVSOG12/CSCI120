@@ -103,37 +103,33 @@ int main ()
 istream& operator>> (istream& inFile, Slide& slide)
 // Read a slide from inFile.
 {
+//    for (int i = 0; i < Slide::HEIGHT; i++)
+//    {
+//        inFile.getline ( slide.image[i], Slide::WIDTH + 1 );
+//    }
+//    inFile >> slide.pause;
+//    inFile.ignore ( 1000);
+//    return inFile;
+//
+//
+//}
     string line;
     int i = 0;
-    while (inFile.peek() != EOF && getline(inFile, line) && i <= Slide::HEIGHT){
-        std::cout << "Line " << line << std::endl;
-
-
-//        if (line.length() > Slide::WIDTH){
-//            line = line.substr(0, Slide::WIDTH);
-//        }
-//        for (int j = 0; j < line.length(); j++){
-//            slide.image[i][j] = line[j];
-//        }
-//        i++;
-//    }
-
-        if (line == "----")
-        {
-            break;
+    while (inFile.peek() != EOF && getline(inFile, line) && i < Slide::HEIGHT){
+        if (line.length() > Slide::WIDTH){
+            line = line.substr(0, Slide::WIDTH);
         }
-        else
-        {
-//            line.erase(std::find(line.begin(), line.end(), '\0'), line.end());
-//          if(line.length() != 0){
-                strcpy(slide.image[i], line.c_str());
-                i++;
+        strcpy(slide.image[i], line.c_str());
+        i++;
+
+//
+//                strcpy(slide.image[i], line.c_str());
+//                i++;
 
 //            }
         }
-        line = "";
+//        line = "";
 
-    }
     inFile >> slide.pause;
     return inFile;
 }
@@ -170,7 +166,8 @@ void Slide:: display () const
                 cout << image[i][j];
         cout << endl;
     }
-//    cout << "NEXT*****      "<<endl;
+    cout << ". . . . . . . . . . . . . . . . . ."<<endl;
+    cout << "1";
 
     wait ( pause );
 }

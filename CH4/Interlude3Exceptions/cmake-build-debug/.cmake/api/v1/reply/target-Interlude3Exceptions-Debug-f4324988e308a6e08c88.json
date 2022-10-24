@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "LinkedListClass"
+			"path" : "Interlude3Exceptions"
 		}
 	],
 	"backtrace" : 1,
@@ -56,7 +56,7 @@
 			]
 		}
 	],
-	"id" : "LinkedListClass::@6890427a1f51a3e7e1df",
+	"id" : "Interlude3Exceptions::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -72,8 +72,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "LinkedListClass",
-	"nameOnDisk" : "LinkedListClass",
+	"name" : "Interlude3Exceptions",
+	"nameOnDisk" : "Interlude3Exceptions",
 	"paths" : 
 	{
 		"build" : ".",

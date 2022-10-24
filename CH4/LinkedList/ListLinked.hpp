@@ -102,7 +102,11 @@ List<DataType>::List(int ignored)
 }
 
 //--------------------------------------------------------------------
-
+// Copy constructor
+// @Pre: other is a valid List
+// @Post: this is a copy of other
+// @Throws: None
+// @Returns: None
 template <typename DataType>
 List<DataType>::List(const List& other)
     : head(0), cursor(0)
@@ -144,7 +148,11 @@ List<DataType>::List(const List& other)
 }
 
 //--------------------------------------------------------------------
-
+// Assignment operator
+// @Pre: other is a valid List
+// @Post: this is a copy of other
+// @Throws: None
+// @Returns: None
 template <typename DataType>
 List<DataType>& List<DataType>::operator=(const List& other)
 
@@ -159,7 +167,11 @@ List<DataType>& List<DataType>::operator=(const List& other)
 }
 
 //--------------------------------------------------------------------
-
+// Destructor
+// @Pre: None
+// @Post: All memory allocated to this List is freed
+// @Throws: None
+// @Returns: None
 template <typename DataType>
 List<DataType>::~List() 
 
@@ -171,7 +183,11 @@ List<DataType>::~List()
 }
 
 //--------------------------------------------------------------------
-
+// Insert
+// @Pre: newDataItem is a valid DataType
+// @Post: newDataItem is inserted into this List
+// @Throws: logic_error if this List is full
+// @Returns: None
 template <typename DataType>
 void List<DataType>::insert(const DataType& newDataItem) throw (logic_error)
 {
@@ -193,7 +209,11 @@ else
 
 
 //--------------------------------------------------------------------
-
+// Remove
+// @Pre: None
+// @Post: The item at the cursor is removed from this List
+// @Throws: logic_error if this List is empty
+// @Returns: None
 template <typename DataType>
 void List<DataType>::remove() throw (logic_error) 
 
@@ -235,7 +255,11 @@ void List<DataType>::remove() throw (logic_error)
 }
 
 //--------------------------------------------------------------------
-
+// Replace
+// @Pre: newDataItem is a valid DataType
+// @Post: The item at the cursor is replaced with newDataItem
+// @Throws: logic_error if this List is empty
+// @Returns: None
 template <typename DataType>
 void List<DataType>::replace(const DataType& newDataItem) throw (logic_error)
 
@@ -255,7 +279,11 @@ void List<DataType>::replace(const DataType& newDataItem) throw (logic_error)
 }
 
 //--------------------------------------------------------------------
-
+// Clear
+// @Pre: None
+// @Post: This List is empty
+// @Throws: None
+// @Returns: None
 template <typename DataType>
 void List<DataType>::clear() 
 
@@ -270,7 +298,11 @@ void List<DataType>::clear()
 }
 
 //--------------------------------------------------------------------
-
+// isEmpty
+// @Pre: None
+// @Post: None
+// @Throws: None
+// @Returns: true if this List is empty, false otherwise
 template <typename DataType>
 bool List<DataType>::isEmpty() const 
 
@@ -281,7 +313,11 @@ bool List<DataType>::isEmpty() const
 }
 
 //--------------------------------------------------------------------
-
+// isFull
+// @Pre: None
+// @Post: None
+// @Throws: None
+// @Returns: true if this List is full, false otherwise
 template <typename DataType>
 bool List<DataType>::isFull() const 
 
@@ -326,7 +362,11 @@ bool List<DataType>::isFull() const
 }
 
 //--------------------------------------------------------------------
-
+// gotoBeginning
+// @Pre: None
+// @Post: The cursor is at the beginning of this List
+// @Throws: logic_error if this List is empty
+// @Returns: None
 template <typename DataType>
 void List<DataType>::gotoBeginning() throw (logic_error)
 
@@ -346,7 +386,11 @@ void List<DataType>::gotoBeginning() throw (logic_error)
 }
 
 //--------------------------------------------------------------------
-
+// gotoEnd
+// @Pre: None
+// @Post: The cursor is at the end of this List
+// @Throws: logic_error if this List is empty
+// @Returns: None
 template <typename DataType>
 void List<DataType>::gotoEnd() throw (logic_error)
 
@@ -369,7 +413,11 @@ void List<DataType>::gotoEnd() throw (logic_error)
 }
 
 //--------------------------------------------------------------------
-
+// gotoNext
+// @Pre: None
+// @Post: The cursor is at the next item in this List
+// @Throws: logic_error if this List is empty or the cursor is at the end
+// @Returns: None
 template <typename DataType>
 bool List<DataType>::gotoNext() throw (logic_error)
 
@@ -397,7 +445,11 @@ bool List<DataType>::gotoNext() throw (logic_error)
 }
 
 //--------------------------------------------------------------------
-
+// gotoPrior
+// @Pre: None
+// @Post: The cursor is at the prior item in this List
+// @Throws: logic_error if this List is empty or the cursor is at the beginning
+// @Returns: None
 template <typename DataType>
 bool List<DataType>::gotoPrior() throw (logic_error)
 
@@ -430,7 +482,11 @@ bool List<DataType>::gotoPrior() throw (logic_error)
 }
 
 //--------------------------------------------------------------------
-
+// getCursor
+// @Pre: None
+// @Post: None
+// @Throws: logic_error if this List is empty
+// @Returns: The item marked by the cursor
 template <typename DataType>
 DataType List<DataType>::getCursor() const throw (logic_error)
 
@@ -442,7 +498,11 @@ DataType List<DataType>::getCursor() const throw (logic_error)
 }
 
 //--------------------------------------------------------------------
-
+// showStructure
+// @Pre: None
+// @Post: None
+// @Throws: None
+// @Returns: None
 template <typename DataType>
 void List<DataType>::showStructure() const
 
