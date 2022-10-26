@@ -1,0 +1,7 @@
+# ninja log v5
+457	517	1666654037975839764	StackLab	aebb3f3ef22e664b
+0	457	1666654037913352078	CMakeFiles/StackLab.dir/test6.cpp.o	3856e012c7a0f954
+5	687	1666633902262418565	CMakeFiles/StackLab.dir/main.cpp.o	c6e9edf22f8007b6
+5	648	1666632049970372498	CMakeFiles/StackLab.dir/delimiters.cpp.o	3cf985e989fdf6bb
+0	450	1666654122220353989	CMakeFiles/StackLab.dir/delimiters.cpp.o	3cf985e989fdf6bb
+451	505	1666654122277965215	StackLab	f95fb0b542dcc07c

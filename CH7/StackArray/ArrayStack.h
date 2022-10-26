@@ -17,7 +17,7 @@ class ArrayStack : public StackInterface<ItemType>
 {
 private:
     ItemType items[MAX_STACK]; // Array of stack items
-    int      top;              // Index to top of stack
+    int top;              // Index to top of stack
 
 public:
     ArrayStack();             // Default constructor

@@ -3,7 +3,7 @@
 
 #ifndef STACK_INTERFACE_CPP
 #define STACK_INTERFACE_CPP
-
+#include <vector>
 #include <cassert>       // For assert
 #include "ArrayStack.h"  // Header file
 
