@@ -1,0 +1,3 @@
+/Users/oreofe/Desktop/CS120/HW/HW4/cmake-build-debug/CMakeFiles/HW4.dir
+/Users/oreofe/Desktop/CS120/HW/HW4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/oreofe/Desktop/CS120/HW/HW4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
