@@ -1,0 +1,3 @@
+/Users/oreofe/Desktop/CS120/PizzaProject/cmake-build-debug/CMakeFiles/PizzaProject.dir
+/Users/oreofe/Desktop/CS120/PizzaProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/oreofe/Desktop/CS120/PizzaProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
