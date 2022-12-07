@@ -8,7 +8,7 @@
 #include "ArrayStack.h"  // Header file
 
 template<class ItemType>
-ArrayStack<ItemType>::ArrayStack() : top(-1)
+ArrayStack<ItemType>::ArrayStack(unsigned long i) : top(-1)
 {
 }  // end default constructor
 

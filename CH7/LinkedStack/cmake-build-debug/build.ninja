@@ -46,8 +46,8 @@ cmake_ninja_workdir = /Users/oreofe/Desktop/CS120/CH7/LinkedStack/cmake-build-de
 
 build cmake_object_order_depends_target_LinkedStack: phony || CMakeFiles/LinkedStack.dir
 
-build CMakeFiles/LinkedStack.dir/b.cpp.o: CXX_COMPILER__LinkedStack_Debug /Users/oreofe/Desktop/CS120/CH7/LinkedStack/b.cpp || cmake_object_order_depends_target_LinkedStack
-  DEP_FILE = CMakeFiles/LinkedStack.dir/b.cpp.o.d
+build CMakeFiles/LinkedStack.dir/main.cpp.o: CXX_COMPILER__LinkedStack_Debug /Users/oreofe/Desktop/CS120/CH7/LinkedStack/main.cpp || cmake_object_order_depends_target_LinkedStack
+  DEP_FILE = CMakeFiles/LinkedStack.dir/main.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/LinkedStack.dir
   OBJECT_FILE_DIR = CMakeFiles/LinkedStack.dir
@@ -60,7 +60,7 @@ build CMakeFiles/LinkedStack.dir/b.cpp.o: CXX_COMPILER__LinkedStack_Debug /Users
 #############################################
 # Link the executable LinkedStack
 
-build LinkedStack: CXX_EXECUTABLE_LINKER__LinkedStack_Debug CMakeFiles/LinkedStack.dir/b.cpp.o
+build LinkedStack: CXX_EXECUTABLE_LINKER__LinkedStack_Debug CMakeFiles/LinkedStack.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/LinkedStack.dir
   POST_BUILD = :

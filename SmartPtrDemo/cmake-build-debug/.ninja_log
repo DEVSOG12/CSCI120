@@ -1,0 +1,5 @@
+# ninja log v5
+0	62	1670202624142173993	build.ninja	206ce77decc308cc
+21	762	1669822452102838595	CMakeFiles/SmartPtrDemo.dir/main.cpp.o	6fdd4d7098da1678
+803	868	1670202404138994643	SmartPtrDemo	15b8a85e5bb4a1a5
+6	803	1670202404071409801	CMakeFiles/SmartPtrDemo.dir/mainx.cpp.o	6990859b9da89367

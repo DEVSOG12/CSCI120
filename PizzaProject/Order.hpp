@@ -20,6 +20,7 @@ public:
     Time getTime();
     void setName(std::string name);
     void setTime(Time time);
+    std::string toString();
 };
 
 // Constructor
@@ -53,6 +54,11 @@ Order::~Order() = default;
 // @return: name
 std::string Order::getName() {
     return name;
+}
+
+// TODO toString()
+std::string Order::toString() {
+    return name; // TODO
 }
 
 // getTime
