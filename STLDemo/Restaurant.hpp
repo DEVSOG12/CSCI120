@@ -6,11 +6,15 @@
 #define STLDEMO_RESTAURANT_HPP
 
 
-
 class Restaurant {
+public:
+    Restaurant();
+    ~Restaurant();
+
+
+private:
 
 };
-
 
 
 #endif //STLDEMO_RESTAURANT_HPP

@@ -1,0 +1,3 @@
+/Users/oreofe/Desktop/CS120/CH7/Queue/cmake-build-debug/CMakeFiles/Queue.dir
+/Users/oreofe/Desktop/CS120/CH7/Queue/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/oreofe/Desktop/CS120/CH7/Queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir

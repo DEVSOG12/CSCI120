@@ -72,9 +72,9 @@ bool LinkedStack<ItemType>::isEmpty() const
 template<class ItemType>
 bool LinkedStack<ItemType>::push(const ItemType& newItem)
 {
-	Node<ItemType>* newNodePtr = new Node<ItemType>(newItem, topPtr);				
+	auto* newNodePtr = new Node<ItemType>(newItem, topPtr);
 	topPtr = newNodePtr;
-   newNodePtr = nullptr;
+//   newNodePtr = nullptr;
       
 	return true;
 }  // end push

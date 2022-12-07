@@ -1,0 +1,3 @@
+/Users/oreofe/Desktop/CS120/CH1/Ch1Inheritance/cmake-build-debug/CMakeFiles/Ch1Inheritance.dir
+/Users/oreofe/Desktop/CS120/CH1/Ch1Inheritance/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/oreofe/Desktop/CS120/CH1/Ch1Inheritance/cmake-build-debug/CMakeFiles/rebuild_cache.dir

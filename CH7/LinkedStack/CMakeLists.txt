@@ -3,4 +3,4 @@ project(LinkedStack)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(LinkedStack  b.cpp b.hpp)
+add_executable(LinkedStack  main.cpp    )

@@ -13,25 +13,27 @@ using namespace std;
 #include "ArrayStack.h"       // Stack class
 //#include<stack>
 
-string postfix(string exp);
+string cpostfix(string exp);
 
 
 int main(){
+//
+//    // this demos the use of try-catch errors when
+//    // peeking in an empty stack
+//    ArrayStack<int> grades(0);
+//    grades.push(98);
+//
+//    try{
+//        cout << grades.peek();
+//    }
+//    catch(std::logic_error &e)
+//    {
+//        cout << "empty stack, continued by ignoring the peek";
+//    }
+//
+//    cout << "\nbye\n" << 2+3 <<endl;
 
-    // this demos the use of try-catch errors when
-    // peeking in an empty stack
-    ArrayStack<int> grades;
-    grades.push(98);
-
-    try{
-        cout << grades.peek();
-    }
-    catch(std::logic_error &e)
-    {
-        cout << "empty stack, continued by ignoring the peek";
-    }
-
-    cout << "\nbye\n" << 2+3 <<endl;
+   std::cout <<  cpostfix("(a+b)*c-1") << std::endl;
     return 0;
 }
 
@@ -48,7 +50,7 @@ string postfix(string exp)
 {
     char token,                   // character in exp
             topToken;                // token on top of opStack
-    ArrayStack<char> opStack;                // stack of operators
+    ArrayStack<char> opStack(0);                // stack of operators
     string RPNexp;                // postfix expression
     const string BLANK = " ";
     for (int i = 0; i < exp.length(); i++)
@@ -136,3 +138,80 @@ int mainx(){
 
 return 0;
 }
+
+// Function that converts an expression from infix to postfix
+string cpostfix(string exp)
+{
+    char token,                   // character in exp
+            topToken;                // token on top of opStack
+    ArrayStack<char> opStack(0);                // stack of operators
+    string RPNexp;                // postfix expression
+    const string BLANK = " ";
+    for (int i = 0; i < exp.length(); i++)
+    {
+
+        token = exp[i];
+        switch(token)
+        {
+            //case ' ' : break;       // do nothing -- skip blanks
+            case '(' : opStack.push(token);
+                break;
+            case ')' : for (;;)
+                {
+                    assert (!opStack.isEmpty());
+                    topToken = opStack.peek();
+                    opStack.pop();
+                    if (topToken == '(') break;
+                    RPNexp.append(BLANK + topToken);
+                }
+                break;
+            case '+' : case '-' :
+            case '*' : case '/': case'%':
+                for (;;)
+                {
+                    if (opStack.isEmpty() ||
+                        opStack.peek() == '(' ||
+                        (token == '*' || token == '/' || token == '%') &&
+                        (opStack.peek() == '+' || opStack.peek() == '-'))
+                    {
+                        opStack.push(token);
+                        break;
+                    }
+                    else
+                    {
+                        topToken = opStack.peek();
+                        opStack.pop();
+                        RPNexp.append(BLANK + topToken);
+                    }
+                }
+                break;
+            default :  // operand
+                RPNexp.append(BLANK + token);
+                for(;;)
+                {
+                    if ( !isalnum(exp[i+1]) ) break;  // end of identifier
+                    i++;
+                    token = exp[i];
+                    RPNexp.append(1, token);
+                }
+        }
+    }
+    // Pop remaining operators on the stack
+    for (;;)
+    {
+        if (opStack.isEmpty()) break;
+        topToken = opStack.peek();
+        opStack.pop();
+        if (topToken != '(')
+        {
+            RPNexp.append(BLANK + topToken);
+        }
+        else
+        {
+            cout << " *** Error in infix expression ***\n";
+            break;
+        }
+    }
+    return RPNexp;
+}
+

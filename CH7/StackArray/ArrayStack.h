@@ -20,7 +20,7 @@ private:
     int top;              // Index to top of stack
 
 public:
-    ArrayStack();             // Default constructor
+    ArrayStack(unsigned long i);             // Default constructor
     bool isEmpty() const;
     bool push(const ItemType& newEntry);
     bool pop();
